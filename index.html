@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>
+                The Snake Game
+            </title>
+            <script src="gl-matrix-min.js" type="text/javascript">
+            </script>
+            <script src="rasterize.js" type="text/javascript">
+            </script>
+            <script src="snake.js" type="text/javascript">
+            </script>
+            <script src="game.js" type="text/javascript">
+            </script>
+        </meta>
+    </head>
+    <body onload="main();">
+        <div style="z-index: 1;
+            position: absolute;
+            left: 800px;
+            width: 500px;
+            border-style:solid;
+            border-color: black;
+            border-width:1px;
+            padding-top:5px;
+            padding-bottom:5px;
+            padding-right:5px;
+            padding-left:5px;
+            margin-top:5px;
+            margin-bottom:5px;
+            margin-right:5px;
+            margin-left:5px;
+            font-size: smaller;">
+            <h1 id="rules">
+                <center>
+                    RULES
+                </center>
+            </h1>
+            <h2 align="center">
+                Welcome to the Snake Game.
+            </h2>
+            <h4 align="center">
+                Single Player Mode
+            </h4>
+            <p>
+                The player controles the
+                <font color="red">
+                    red
+                </font>
+                snake. Let's call him Snakey. Use the arrow keys to control Snakey.
+            </p>
+            <p>
+                You must eat the
+                <font color="blue">
+                    blue
+                </font>
+                food particle that will appear at random locations, while avoiding the walls, Snakey's own body and the
+                <font color="#777777">
+                    grey
+                </font>
+                snake. (Let's call her Miss Hiss).
+            </p>
+            <p>
+                You have 2 powers to use:
+                <ul>
+                    <li>
+                        Use the spacebar to toggle between high speed and low speed. You will get 2x points for every food eaten in the high speed mode.
+                    </li>
+                    <li>
+                        Use M to activate
+                        <b>
+                            GOD MODE
+                        </b>
+                        . While in God mode, you will be indestructible for about 0.7 seconds. If you time it right, you can use it to escape tough situations.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Press I to toggle between over-the-shoulder view and the normal view. You get double points for this as well. Multipliers stack, so over-the-shoulder high speed mode will give you 4x points.
+            </p>
+            <br>
+                <h4 align="center">
+                    Two Player Mode
+                </h4>
+                <p>
+                    To start a two player mode, all you need to do is start controlling Miss Hiss with the W, A, S and D keys to move. This will change the Non Playable Snake to a player controlled snake.
+                </p>
+                <p>
+                    Player one still controls Snakey with the same keys as before.
+                </p>
+                <p>
+                    The same rules apply to each player: No hitting walls, yourself or the other snake. The player who hits any of these loses. In case of a tie due to head-on collision, the player with the higher score wins.
+                </p>
+                <p>
+                    Power-up instructions:
+                    <ul>
+                        <li>
+                            High speed mode is disabled in the two player mode to avoid the players from fighting each other in the real world.
+                        </li>
+                        <li>
+                            <b>
+                                GOD MODE
+                            </b>
+                            controls for Snakey is still M, whereas Miss Hiss uses the T key.
+                        </li>
+                    </ul>
+                </p>
+            </br>
+        </div>
+        <canvas height="768" id="myWebGLCanvas" style="position: absolute; z-index: 0" width="768">
+        </canvas>
+        <h1 id="scoretag" style="position: relative;  z-index: 1">
+            Snakey's Score: 0
+        </h1>
+        <h1 id="npscoretag" style="position: relative; z-index: 1">
+            NP Snake's Score: 0
+        </h1>
+        <h1 id="gameovermessage" style="position: relative; z-index: 1">
+        </h1>
+    </body>
+</html>
